@@ -19,7 +19,7 @@ generateButton.addEventListener('click', (e) => {
             hairColor.innerHTML = '<em> Loading...</em>'
             skin.innerHTML = '<em> Loading...</em>'
 
-    const randomCharacter = Math.ceil(Math.random() * 83)
+    const randomCharacter = Math.ceil(Math.random() * 82)
     fetch(`https://swapi.dev/api/people/${randomCharacter}`)
     .then(response => response.json())
     .then(data => {
@@ -33,24 +33,3 @@ generateButton.addEventListener('click', (e) => {
             skin.innerHTML = `Skin Color: ${data.skin_color}`;
         })
     })
-
-
-
-
-// generateButton.addEventListener('click', () => {
-    
-//     fetch('https://swapi.dev/api/people')
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data);
-//             const randomCharacter = data.results[Math.floor(Math.random() * data.results.length)];
-//             name1.innerText = randomCharacter.name;
-//             gender.innerText = `Gender: ${randomCharacter.gender}`;
-//             dob.innerText = `DOB: ${randomCharacter.birth_year}`;
-//             height.innerText = `Height: ${randomCharacter.height}`;
-//             hairColor.innerText = `Hair Color: ${randomCharacter.hair_color}`;
-//             skin.innerText = `Skin Color: ${randomCharacter.skin_color}`;
-//         })
-//         .catch(error => console.log(error));
-// });
-
